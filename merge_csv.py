@@ -5,7 +5,7 @@ import glob
 header = []
 data = []
 
-file_list = glob.glob('/Users/juliakarst/PycharmProjects/NewsWebcrawler/csv_data_and_scripts/big_csv_files/*.csv')
+file_list = glob.glob('/Users/juliakarst/PycharmProjects/NewsLDA/data/newspapers/*.csv')
 
 
 def merge_data(input_files):
@@ -18,7 +18,7 @@ def merge_data(input_files):
 
 merge_data(file_list)
 
-with open('all_articles_new.csv', 'a') as result:
+with open('all_articles.csv', 'a') as result:
     writer = csv.writer(result, delimiter=',')
     writer.writerow(["title", "author", "date_published", "url", "article_text", "source"])
     writer.writerows(data)

@@ -21,21 +21,24 @@ with open('/Users/juliakarst/PycharmProjects/NewsLDA/data/modeldata/news_corpus'
     corpus = pickle.load(input_file)
 news_dictionary = gensim.corpora.Dictionary.load('/Users/juliakarst/PycharmProjects/NewsLDA/data/modeldata/news_dictionary')
 model = LdaModel.load('/Users/juliakarst/PycharmProjects/NewsLDA/data/modeldata/model')
-###
+
+""" WIWO: Load data_words, corpus, dictionary and model"""
 with open('/Users/juliakarst/PycharmProjects/NewsLDA/data/modeldata/data_words_ww', 'rb') as f:
     data_words_ww = pickle.load(f)
 with open('/Users/juliakarst/PycharmProjects/NewsLDA/data/modeldata/news_corpus_ww', 'rb') as input_file:
     corpus_ww = pickle.load(input_file)
 news_dictionary_ww = gensim.corpora.Dictionary.load('/Users/juliakarst/PycharmProjects/NewsLDA/data/modeldata/news_dictionary_ww')
 model_ww = LdaModel.load('/Users/juliakarst/PycharmProjects/NewsLDA/data/modeldata/model_ww')
-###
+
+""" SD: Load data_words, corpus, dictionary and model"""
 with open('/Users/juliakarst/PycharmProjects/NewsLDA/data/modeldata/data_words_sd', 'rb') as f:
     data_words_sd = pickle.load(f)
 with open('/Users/juliakarst/PycharmProjects/NewsLDA/data/modeldata/news_corpus_sd', 'rb') as input_file:
     corpus_sd = pickle.load(input_file)
 news_dictionary_sd = gensim.corpora.Dictionary.load('/Users/juliakarst/PycharmProjects/NewsLDA/data/modeldata/news_dictionary_sd')
 model_sd = LdaModel.load('/Users/juliakarst/PycharmProjects/NewsLDA/data/modeldata/model_sd')
-###
+
+""" TS: Load data_words, corpus, dictionary and model"""
 with open('/Users/juliakarst/PycharmProjects/NewsLDA/data/modeldata/data_words_ts', 'rb') as f:
     data_words_ts = pickle.load(f)
 with open('/Users/juliakarst/PycharmProjects/NewsLDA/data/modeldata/news_corpus_ts', 'rb') as input_file:

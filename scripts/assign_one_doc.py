@@ -6,7 +6,7 @@ import gensim.corpora as corpora
 
 
 #Test-Dokument: https://www.tagesspiegel.de/wirtschaft/schlimmere-folgen-als-der-ukraine-krieg-so-bedroht-chinas-covid-politik-die-weltwirtschaft/28280546.html
-test_datei =open('/Users/juliakarst/PycharmProjects/NewsLDA/data/new_article_2','r')
+test_datei =open('/Users/juliakarst/PycharmProjects/NewsLDA/data/new_article','r')
 
 document = test_datei.read()
 

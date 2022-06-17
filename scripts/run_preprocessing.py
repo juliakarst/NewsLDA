@@ -83,15 +83,12 @@ def remove_stopwords(texts):
 
 print("creating data_words")
 data = articles.art_text_processed.values.tolist()
-#print(data[0]) # list of strings
-#print(sentences_to_words(data[0][0]))
+#print(data[0]) 
 
 data_words = list(sentences_to_words(data))
-#print(data_words[0]) #list of list of token
+#print(data_words[0]) 
 data_words = remove_stopwords(data_words)
 data_words = [w for w in data_words if len(w) > 2]
-#print(data_words[0]) # a list of lists of token
-
 
 
 def lemmatizer(input_docs):

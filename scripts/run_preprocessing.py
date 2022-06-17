@@ -1,4 +1,3 @@
-# tutorial: https://towardsdatascience.com/end-to-end-topic-modeling-in-python-latent-dirichlet-allocation-lda-35ce4ed6b3e0
 from wordcloud import WordCloud
 from gensim.utils import simple_preprocess
 import gensim.corpora as corpora

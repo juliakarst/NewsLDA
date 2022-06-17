@@ -12,17 +12,9 @@ with open('/Users/juliakarst/PycharmProjects/NewsLDA/data/modeldata/data_words',
     data_words = pickle.load(f)
 with open('/Users/juliakarst/PycharmProjects/NewsLDA/data/modeldata/news_corpus', 'rb') as input_file:
     corpus = pickle.load(input_file)
-with open('/Users/juliakarst/PycharmProjects/NewsLDA/data/modeldata/news_corpus_ts', 'rb') as input_file:
-    corpus_ts = pickle.load(input_file)
-with open('/Users/juliakarst/PycharmProjects/NewsLDA/data/modeldata/news_corpus_sd', 'rb') as input_file:
-    corpus_sd = pickle.load(input_file)
-with open('/Users/juliakarst/PycharmProjects/NewsLDA/data/modeldata/news_corpus_wiwo', 'rb') as input_file:
-    corpus_wiwo = pickle.load(input_file)
 news_dictionary = gensim.corpora.Dictionary.load('/Users/juliakarst/PycharmProjects/NewsLDA/data/modeldata/news_dictionary')
 model = LdaModel.load('/Users/juliakarst/PycharmProjects/NewsLDA/data/modeldata/model')
-model_ts = LdaModel.load('/Users/juliakarst/PycharmProjects/NewsLDA/data/modeldata/model_ts')
-model_sd = LdaModel.load('/Users/juliakarst/PycharmProjects/NewsLDA/data/modeldata/model_sd')
-model_wiwo = LdaModel.load('/Users/juliakarst/PycharmProjects/NewsLDA/data/modeldata/model_wiwo_new')
+
 
 def sub(text):
     """ unifying dates to a single format"""
@@ -239,21 +231,8 @@ def convert_topics(model, top):
 #for t in topics:
 #    print(t)
 
-topic_in_docs(model,corpus,data_words, 15, 0.1,'topic20_olympia.csv')
-#print_data_to_docs('topic_covid.csv')
-
-#docs = docnr_for_topic(model, corpus, 69, 0.5)
-#for doc in docs:
-#    print(doc)
-#    print("Tokens: " + str(data_words[doc[0]]))
-
-
-
-
-
-#print(data_words[0])
-
-
+topic_in_docs(model,corpus,data_words, 15, 0.1,'topic_olympia.csv')
+#print_data_to_docs('topic_olympia.csv')
 
 #show the attribution of topics to one document
 #print(data_words[0])
@@ -265,12 +244,7 @@ topic_in_docs(model,corpus,data_words, 15, 0.1,'topic20_olympia.csv')
 #    print(data_words[i[0]])
 #    print(i)
 
+#wordcount_in_docs(news_dictionary, "corona")
+#listofdocs = create_doclist_for_word("corona")
+#info_to_doc('/Users/juliakarst/PycharmProjects/NewsLDA/data/all_articles.csv', listofdocs, "corona.csv")
 
-
-#wordcount_in_docs(news_dictionary, "nord_stream")
-#searchedwords=["corona", "covid", "coronavirus", "virus", "wuhan"]
-#listofdocs = create_doclist_for_word("nord_stream")
-#info_to_doc('/Users/juliakarst/PycharmProjects/NewsLDA/data/all_articles.csv', listofdocs, "nordstream.csv")
-
-#top_topics = model.top_topics(corpus, topn=20)
-#pprint(top_topics)

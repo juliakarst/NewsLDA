@@ -6,6 +6,7 @@ from gensim.models.coherencemodel import CoherenceModel
 import logging
 import nltk
 
+# print information while model is training
 #logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
 
 """ Load the words for the dictionary """
@@ -16,7 +17,7 @@ try:
     #load the dictionary
     id2word = corpora.Dictionary.load('/Users/juliakarst/PycharmProjects/NewsLDA/data/modeldata/news_dictionary')
 except:
-    #Create and save the dictionary
+    #Create the dictionary
     id2word = corpora.Dictionary(data_words)
 
 
@@ -32,12 +33,13 @@ print('Number of unique tokens: %d' % len(id2word))
 print('Number of documents: %d' % len(corpus))
 
 #Decide the model parameters
-num_topics = 20 # Number of topics
-chunk_size = 2000  # Numbers of documents fed into the training algorithm
-passes = 20  # Number of times trained on the entire corpus
-iterations = 750 # Number of loops over each document
-eval_every = None  # Evaluate model perplexity
+num_topics = 20 # Nr. of topics
+chunk_size = 2000  # Chunk size fed into the training algorithm
+passes = 20  # Nr. of times for training
+iterations = 750 # Nr. of loops over each document
+eval_every = None  # Evaluate perplexity
 
+# set random_state to reproduce the model (results might be better without)
 lda_model = LdaModel(
     corpus=corpus,
     id2word=id2word,
@@ -48,7 +50,7 @@ lda_model = LdaModel(
     num_topics=num_topics,
     passes=passes,
     eval_every=eval_every,
-    random_state=0
+    random_state=0 
 
 )
 

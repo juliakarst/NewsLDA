@@ -10,7 +10,7 @@ Progammcode findet sich im Ordner "scripts":
 
 Daten für die Analyse finden sich im Ordner "data":
 - modeldata: gespeicherte LDA-Modelle
-- sueddeutsche, taggesspiegel, wirtschaftswoche: monatliche Artikel als CSV-Datei
+- monatliche Artikel einer Zeitung als CSV-Datei im jeweiligen Ordner
 - all_articles.csv u.ä.: verwendete Korpora
 
 Das für das LDA-Modell verwendete Korpus "all_articles.csv" kann aufgrund seiner Größe nur in komprimierter Form hochgeladen werden. Es kann auch rekreiert werden, indem merge_csv.py auf den csv-Dateien "sueddeusche/ww/tagesspiegel_all.csv" ausgeführt wird.

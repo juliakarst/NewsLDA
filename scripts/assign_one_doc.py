@@ -16,6 +16,7 @@ news_dictionary = gensim.corpora.Dictionary.load('/Users/juliakarst/PycharmProje
 """ Load the model """
 model = LdaModel.load('/Users/juliakarst/PycharmProjects/NewsLDA/data/modeldata/model')
 
+# turn into BOW and assign probabilities
 doc_bow = news_dictionary.doc2bow(document.split())
 print(doc_bow)
 doc_lda = model[doc_bow]

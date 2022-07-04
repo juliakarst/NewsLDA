@@ -59,7 +59,7 @@ def wordcount_in_docs(dictionary, word):
         print(word, str(0))
 
 def wordlist_in_docs(dictionary, wordlist):
-    """ prints how often a word is found and in how many documents it is found"""
+    """ prints how often a word from a wordlist is found and in how many documents it is found"""
     found = False
     for i in dictionary:
         if dictionary[i] in wordlist:
@@ -109,7 +109,7 @@ def topic_in_docs(model, corpus, data_words, topic_nr, minprob, filename):
             writer.writerow([doc[0], doc[1]])
 
 def print_data_to_docs(readfile):
-    """ prints metadata information to document-IDs in readfile[0] """
+    """ prints metadata information to document-IDs in readfile """
     with open(readfile, 'r') as file:
         file.readline()
         reader = csv.reader(file)
@@ -140,7 +140,7 @@ def create_doclist_for_word(word):
     return listofdocs
 
 def create_doclist_for_wordlist(wordlist):
-    """ takes a word and creates a list of document-IDs in which that word occurs"""
+    """ takes a word from a wordlist and creates a list of document-IDs in which that word occurs"""
     i = 0
     listofdocs = []
     for word in wordlist:
@@ -227,10 +227,12 @@ def convert_topics(model, top):
     return(topicwords)
 
 
+# print the topics for reference
 #topics = model.print_topics(num_topics=20, num_words=15)
 #for t in topics:
 #    print(t)
 
+# show which documents contain a topic
 topic_in_docs(model,corpus,data_words, 15, 0.1,'topic_olympia.csv')
 #print_data_to_docs('topic_olympia.csv')
 
@@ -244,6 +246,7 @@ topic_in_docs(model,corpus,data_words, 15, 0.1,'topic_olympia.csv')
 #    print(data_words[i[0]])
 #    print(i)
 
+#show which documents contain a certain word
 #wordcount_in_docs(news_dictionary, "corona")
 #listofdocs = create_doclist_for_word("corona")
 #info_to_doc('/Users/juliakarst/PycharmProjects/NewsLDA/data/all_articles.csv', listofdocs, "corona.csv")

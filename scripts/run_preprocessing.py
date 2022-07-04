@@ -19,13 +19,14 @@ nlp.max_length = 4000000
 
 """ load the data, drop unneccessary columns """
 print("reading data")
+# reading the CSV-file
+# for 'all_articles' the very first row needs to be dropped when reading in the CSV-file
 articles = pd.read_csv('/Users/juliakarst/PycharmProjects/NewsLDA/data/ww_all.csv')
 articles = articles.drop(columns=['title', 'author', 'date_published', 'url', 'source'], axis=1)
 #print(articles.head())
 
 """ remove punctuation, filter and convert to lowercase """
 print("preprocessing")
-
 articles['art_text_processed'] = articles['article_text'].map(lambda x: re.sub("[,.!?]", "", str(x)))
 articles['art_text_processed'] = articles['art_text_processed'].map(lambda x: re.sub("[0-9]*", "", str(x)))
 articles['art_text_processed'] = articles['art_text_processed'].map(lambda x: re.sub("China[s]*", "", str(x)))
@@ -71,7 +72,7 @@ image.show()
 
 
 # tokenizing
-#some helper functions
+# some helper functions
 def sentences_to_words(sentences):
     for sentence in sentences:
         #Convert a document into a list of tokens.
@@ -83,13 +84,14 @@ def remove_stopwords(texts):
 print("creating data_words")
 data = articles.art_text_processed.values.tolist()
 #print(data[0]) 
-
 data_words = list(sentences_to_words(data))
 #print(data_words[0]) 
 data_words = remove_stopwords(data_words)
-data_words = [w for w in data_words if len(w) > 2]
+#filter out single letters (short words could also be removed, but not recommended for this specific use case)
+data_words = [w for w in data_words if len(w) > 2] 
 
-
+# lemmatizing
+# helper function
 def lemmatizer(input_docs):
     #Lemmatizing words
     print("Now Lemmatizing")

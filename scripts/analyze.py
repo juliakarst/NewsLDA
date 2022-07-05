@@ -234,7 +234,7 @@ def convert_topics(model, top):
 
 # show which documents contain a topic
 topic_in_docs(model,corpus,data_words, 1, 0.1,'pandemie.csv')
-#print_data_to_docs('topic_olympia.csv')
+#print_data_to_docs('pandemie.csv')
 
 #show the attribution of topics to one document
 #print(data_words[0])

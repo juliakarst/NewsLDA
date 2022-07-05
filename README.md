@@ -15,4 +15,4 @@ Daten für die Analyse finden sich im Ordner "data":
 
 Die Ordner "Grafiken" und "Daten-Analyse" enthalten Statistiken und Tabellen zur Auswertung und Interpretation.
 
-Das für das LDA-Modell verwendete Korpus "all_articles.csv" kann aufgrund seiner Größe nur in komprimierter Form hochgeladen werden. Es kann auch erstellt werden, indem merge_csv.py auf den csv-Dateien "sueddeusche/ww/tagesspiegel_all.csv" ausgeführt wird.
+Das für das LDA-Modell verwendete Korpus "all_articles.csv" kann aufgrund seiner Größe nur in komprimierter Form hochgeladen werden. Es kann auch erstellt werden, indem merge_csv.py auf den CSV-Dateien "sueddeusche/ww/tagesspiegel_all.csv" ausgeführt wird.

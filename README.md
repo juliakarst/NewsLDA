@@ -1,5 +1,7 @@
 # NewsLDA: Nachrichtenanalyse mittels Latent Dirichlet Allocation
 
+**EDIT (28.07.2022): Die Korpora sind nun nur noch privat sichtbar.**
+
 Pfadangaben müssen vor Nutzung angepasst werden!
 
 Progammcode findet sich im Ordner "scripts":
